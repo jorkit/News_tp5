@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/login_top.css"/>
+ 
+</head>
+<body>
+<div class="main">
+    <div>
+        <div class="top">
+            <div class="nav">
+                <div class="nav-glass">
+                </div>
+                <div class="nav-menu col-lg-offset-2 col-xs-offset-2 ">
+                    <div class="nav-menu-left">
+                        <ul>
+                            <li>
+                                <img src="/static/background/LOGO.png" style="margin: 0 5px 10px 0">
+                                <a href="/">起始站</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-menu-right">
+                        <ul>
+                            {if condition="$Think.session.user_id != null"}
+                                <li>
+                                    <a href="../frontEnd/logout.php">下车</a>
+                                </li>
+                                {switch name="$Think.session.role_id"}
+                                    {case value="1"}
+                                        <li><a href='../backstage/home.php'>&nbsp管理</a></li>
+                                    {/case}
+                                    {case value="2"}
+                                        <li><a href="../backstage/home.php">&nbsp工作</a></li>
+                                    {/case}
+                                    {case value="3"}{/case}
+                                    {default /}
+                                {/switch}
+                                <li>
+                                    <a href="../frontEnd/userInfo.php">{$Think.session.nickname}</a>
+                                </li>
+                            {/if}
+                            {if condition="$Think.session.user_id == null"}         
+                                <li>
+                                    <a href="../frontEnd/login.php">上车</a>
+                                </li>
+                            {/if}
+                            <li>
+                                {if condition="$Think.session.user_id == null"}
+                                    <a href="/user/index/login"><img style="width: 38px;height: 38px;" class="img-circle" src="
+                                    /static/uploads/user/uploads/默认头像.jpg"></a>
+                                {else/}
+                                {if condition="$Think.session.head_pic != null"}
+                                    <a href="../frontEnd/userInfo.php"><img style="width: 35px;height: 35px;" class="img-circle" src="/static/uploads//{$Think.session.head_pic}"></a>
+                                {else /}
+                                    <a href="../frontEnd/userInfo.php"><img style="width: 35px;height: 35px;" class="img-circle" src="
+                                    /static/uploads/user/uploads/默认头像.jpg"></a>
+                                {/if}
+                                {/if}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="photo">
+                <img src="/static/background/clound.png">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{include file="index:login_top"}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户信息</title>
+    <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/userInfo.css">
+</head>
+<body>
+<div class="main2">
+    <div class="content">
+        <div class="content-left">
+            <ul class="nav .nav-stacked">
+                <li role="presentation" class="active ">个人中心</li>
+                <li role="presentation" ><a href="#">我的信息</a></li>
+            </ul>
+        </div>
+        <div class="content-right">
+            <div class="content-right-top">
+                <b style="width: 30px;display:inline-block"></b>
+                我的信息
+            </div>
+            <div class="info-list1">
+                <div class="info-headphoto">
+                    <img src="/static/uploads//{$head_pic}" style="height: 180px;width: 180px;" class="img-circle" >
+                </div>
+            </div>
+            <div class="info-line">
+                <div class="info-list2">
+                    <div class="info-user">
+                        <label class="info-lab" >用户名：</label><div class="info-user-content">{$account}</div>
+                    </div>
+                    <div class="info-user">
+                        <label class="info-lab" >昵称：</label><div class="info-user-content">{$nickname}</div>
+                    </div>
+                    <div class="info-user">
+                        <label class="info-lab" >年龄：</label><div class="info-user-content">{$age}</div>
+                    </div>
+                    <div class="info-user">
+                        <label class="info-lab" >性别：</label><div class="info-user-content">{$sex == 1 ? "男" :  "女" }
+                    </div>
+                    </div>
+                    <div class="info-user">
+                        <label class="info-lab" >个性签名：</label><div class="info-user-content">{$signature}</div>
+                    </div>
+                </div>
+                <div class="info-list3">
+                    <button type="button" class="btn btn-default" onclick="window.location.href='infoUpdate'">修改资料</button>
+                    <div>&nbsp</div>
+                    <div>&nbsp</div>
+                    <button type="button" class="btn btn-default" onclick="window.location.href='/'" style="width: 82px;height: 32px">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="index:footer"/}
+</body>
+</html>

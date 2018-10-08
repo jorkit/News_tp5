@@ -1,0 +1,47 @@
+{include file="index:login_top"/}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/login_top.css"/>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <script type="text/javascript"src="/static/js/checklogin.js"></script>
+</head>
+<body>
+<div class="main2">
+    <div class="title">
+        <div class="title-line"></div>
+        <span class="title-name">登录</span>
+        <div class="title-line2"></div>
+    </div>
+    <div  class="content">
+        <div  class="content-left">
+            <img src="/static/background/登录图片.jpg">
+        </div>
+        <div class="content-right">
+            <form action="/user/index/dologin" method="post" name="form1" >
+                <div class="group">
+                    <input type="text"  class="form-control" name="saccount" id="saccount" onblur="ckname();" placeholder="你的手机号/邮箱">
+                    <div id="domename" class="dome" ></div>
+                </div>
+                <div class="group">
+                    <input type="password"  class="form-control" name="spassword" id="spassword" onblur="ckpass();" placeholder="密码">
+                    <div id="domepass" class="dome"></div>
+                </div>
+                <div style="width:400px;margin-top: 20px">
+                    <button  class="btn btn-primary" onclick="return checklogin();"  style="height: 50px;width: 176px; line-height: 40px;margin-right: 26px">登录</button>
+            </form>
+            <a href="registe.php" class="btn btn-default" style="height: 50px;width: 176px; line-height: 40px;">注册</a>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
